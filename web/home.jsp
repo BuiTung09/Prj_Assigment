@@ -1,13 +1,6 @@
-<%-- 
-    Document   : home
-    Created on : Dec 8, 2024, 10:44:24 AM
-    Author     : acmon
---%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -117,7 +110,7 @@
     </head>
     <body>
         <header>
-            <div>Welcome TO Expense Management</div>
+            <div>Welcome To Expense Management</div>
             <div class="auth">
                 <c:choose>
                     <c:when test="${not empty sessionScope.user}">
@@ -132,28 +125,51 @@
         </header>
         <div class="container">
             <h1>Expense Management</h1>
-            <c:choose> 
-                <c:when test="${not empty sessionScope.user}"> 
-                    <h2>Welcome, ${sessionScope.user.username}!</h2> 
-                </c:when> 
+            <c:choose>
+                <c:when test="${not empty sessionScope.user}">
+                    <h2>Welcome, ${sessionScope.user.username}!</h2>
+                </c:when>
             </c:choose>
             <div class="flex">
                 <div class="quick-actions">
                     <h2>Quick Actions</h2>
                     <hr>
-                    <button onclick="location.href = 'addSpend.jsp?type=shopping'">Add new Shopping spend</button>
-                    <button onclick="location.href = 'addSpend.jsp?type=food'">Add new Food spend</button>
-                    <button onclick="location.href = 'addSpend.jsp?type=education'">Add new Education spend</button>
-                    <button onclick="location.href = 'addSpend.jsp?type=bills'">Add new Bills & Utilities spend</button>
-                    <button onclick="location.href = 'addSpend.jsp?type=health'">Add new Health & Wellness spend</button>
-                    <button onclick="location.href = 'addSpend.jsp?type=entertainment'">Add new Entertainment spend</button>
+                    <button onclick="location.href = 'LoadCategoriesServlet?type=shopping'">Add new Shopping spend</button>
+                    <button onclick="location.href = 'LoadCategoriesServlet?type=food'">Add new Food spend</button>
+                    <button onclick="location.href = 'LoadCategoriesServlet?type=education'">Add new Education spend</button>
+                    <button onclick="location.href = 'LoadCategoriesServlet?type=bills'">Add new Bills & Utilities spend</button>
+                    <button onclick="location.href = 'LoadCategoriesServlet?type=health'">Add new Health & Wellness spend</button>
+                    <button onclick="location.href = 'LoadCategoriesServlet?type=entertainment'">Add new Entertainment spend</button>
                 </div>
                 <div class="categories">
                     <hr>
                     <h2>Categories :</h2>
-                    <c:forEach var="category" items="${categories}">
-                        <div class="category">${category.name}<br>$<fmt:formatNumber value="${category.totalAmount}" type="currency"/></div>
-                        </c:forEach>
+                    <div class="category-columns">
+                        <div class="column">
+                            <h3>Shopping</h3>
+                            <p>$<fmt:formatNumber value="${category[0].totalAmount}" type="currency"/></p>
+                        </div>
+                        <div class="column">
+                            <h3>Food</h3>
+                            <p>$<fmt:formatNumber value="${category[1].totalAmount}" type="currency"/></p>
+                        </div>
+                        <div class="column">
+                            <h3>Education</h3>
+                            <p>$<fmt:formatNumber value="${category[2].totalAmount}" type="currency"/></p>
+                        </div>
+                        <div class="column">
+                            <h3>Bills & Utilities</h3>
+                            <p>$<fmt:formatNumber value="${category[3].totalAmount}" type="currency"/></p>
+                        </div>
+                        <div class="column">
+                            <h3>Health & Wellness</h3>
+                            <p>$<fmt:formatNumber value="${category[4].totalAmount}" type="currency"/></p>
+                        </div>
+                        <div class="column">
+                            <h3>Entertainment</h3>
+                            <p>$<fmt:formatNumber value="${category[5].totalAmount}" type="currency"/></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div>
@@ -170,10 +186,10 @@
                     <tbody>
                         <c:forEach var="expense" items="${todayExpenses}">
                             <tr>
-                                <td>${expense.expenseName}</td> 
-                                <td>$<fmt:formatNumber value="${expense.amount}" type="currency"/></td> 
-                                <td><fmt:formatDate value="${expense.expenseDate}" pattern="MMMM d, yyyy"/></td> 
-                                <td>${expense.categoryName}</td>
+                                <td>${expense.getExpenseName()}</td>
+                                <td>$<fmt:formatNumber value="${expense.getAmount()}" type="currency"/></td>
+                                <td><fmt:formatDate value="${expense.getExpenseDate()}" pattern="MMMM d, yyyy"/></td>
+                                <td>${expense.getCategoryName()}</td>
                             </tr>
                         </c:forEach>
                     </tbody>

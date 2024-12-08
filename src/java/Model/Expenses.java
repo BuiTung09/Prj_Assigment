@@ -1,14 +1,16 @@
 package Model;
 
-import java.sql.*;
+import java.sql.Date;
 
 public class Expenses {
+
     private int expenseID;
     private String expenseName;
     private double amount;
     private Date expenseDate;
     private int categoryID;
     private int userID;
+    private String categoryName;
 
     public Expenses() {
     }
@@ -20,9 +22,8 @@ public class Expenses {
         this.expenseDate = expenseDate;
         this.categoryID = categoryID;
         this.userID = userID;
+    
     }
-
-    // Getters and Setters
 
     public int getExpenseID() {
         return expenseID;
@@ -70,6 +71,14 @@ public class Expenses {
 
     public void setUserID(int userID) {
         this.userID = userID;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
     
 }

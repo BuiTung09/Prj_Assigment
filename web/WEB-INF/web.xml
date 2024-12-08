@@ -16,6 +16,18 @@
         <servlet-name>AddSpendServlet</servlet-name>
         <servlet-class>Controller.AddSpendServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadCategoriesServlet</servlet-name>
+        <servlet-class>Controller.LoadCategoriesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadTodayExpensesServlet</servlet-name>
+        <servlet-class>Controller.LoadTodayExpensesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadCategoriesWithAmountServlet</servlet-name>
+        <servlet-class>Controller.LoadCategoriesWithAmountServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -31,5 +43,17 @@
     <servlet-mapping>
         <servlet-name>AddSpendServlet</servlet-name>
         <url-pattern>/AddSpendServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadCategoriesServlet</servlet-name>
+        <url-pattern>/LoadCategoriesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadTodayExpensesServlet</servlet-name>
+        <url-pattern>/LoadTodayExpensesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadCategoriesWithAmountServlet</servlet-name>
+        <url-pattern>/LoadCategoriesWithAmountServlet</url-pattern>
     </servlet-mapping>
 </web-app>
