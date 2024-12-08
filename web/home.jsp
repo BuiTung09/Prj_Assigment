@@ -170,10 +170,10 @@
                     <tbody>
                         <c:forEach var="expense" items="${todayExpenses}">
                             <tr>
-                                <td>${expense.name}</td>
-                                <td>$<fmt:formatNumber value="${expense.amount}" type="currency"/></td>
-                                <td><fmt:formatDate value="${expense.date}" pattern="MMMM d, yyyy"/></td>
-                                <td>${expense.category}</td>
+                                <td>${expense.expenseName}</td> 
+                                <td>$<fmt:formatNumber value="${expense.amount}" type="currency"/></td> 
+                                <td><fmt:formatDate value="${expense.expenseDate}" pattern="MMMM d, yyyy"/></td> 
+                                <td>${expense.categoryName}</td>
                             </tr>
                         </c:forEach>
                     </tbody>

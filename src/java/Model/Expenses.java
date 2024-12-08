@@ -1,56 +1,75 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
+
 import java.sql.*;
 
 public class Expenses {
-    private int ExpenseID;
-    private String ExpenseName;
-    private Double Amount;
-    private Date ExpenseDate;
+    private int expenseID;
+    private String expenseName;
+    private double amount;
+    private Date expenseDate;
+    private int categoryID;
+    private int userID;
 
     public Expenses() {
     }
 
-    public Expenses(int ExpenseID, String ExpenseName, Double Amount, Date ExpenseDate) {
-        this.ExpenseID = ExpenseID;
-        this.ExpenseName = ExpenseName;
-        this.Amount = Amount;
-        this.ExpenseDate = ExpenseDate;
+    public Expenses(int expenseID, String expenseName, double amount, Date expenseDate, int categoryID, int userID) {
+        this.expenseID = expenseID;
+        this.expenseName = expenseName;
+        this.amount = amount;
+        this.expenseDate = expenseDate;
+        this.categoryID = categoryID;
+        this.userID = userID;
     }
+
+    // Getters and Setters
 
     public int getExpenseID() {
-        return ExpenseID;
+        return expenseID;
     }
 
-    public void setExpenseID(int ExpenseID) {
-        this.ExpenseID = ExpenseID;
+    public void setExpenseID(int expenseID) {
+        this.expenseID = expenseID;
     }
 
     public String getExpenseName() {
-        return ExpenseName;
+        return expenseName;
     }
 
-    public void setExpenseName(String ExpenseName) {
-        this.ExpenseName = ExpenseName;
+    public void setExpenseName(String expenseName) {
+        this.expenseName = expenseName;
     }
 
-    public Double getAmount() {
-        return Amount;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setAmount(Double Amount) {
-        this.Amount = Amount;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     public Date getExpenseDate() {
-        return ExpenseDate;
+        return expenseDate;
     }
 
-    public void setExpenseDate(Date ExpenseDate) {
-        this.ExpenseDate = ExpenseDate;
+    public void setExpenseDate(Date expenseDate) {
+        this.expenseDate = expenseDate;
+    }
+
+    public int getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
     
 }
