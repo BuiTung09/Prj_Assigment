@@ -1,15 +1,181 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+        }
+
+        header .auth {
+            display: flex;
+            gap: 10px;
+        }
+
+        header .auth a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .quick-actions, .categories {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+        }
+
+        .quick-actions button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quick-actions button:hover {
+            background-color: #0056b3;
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category {
+            flex: 1;
+            max-width: 150px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+        .table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>Welcom To Expense Management</div>
+        <div class="auth">
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Expense Management</h1>
+        <div class="flex">
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <hr><!-- comment -->
+                <button>Add new Shopping spend</button>
+                <button>Add new Food spend</button>
+                <button>Add new Education spend</button>
+                <button>Add new Bills & Utilities spend</button>
+                <button>Add new Health & Wellness spend</button>
+                <button>Add new Entertainment spend</button>
+            </div>
+            <div class="categories">
+                <hr><!-- comment -->
+                <h2>Categories : </h2>
+                <div class="category">Shopping<br></div>
+                <div class="category">Food<br></div>
+                <div class="category">Education<br></div>
+                <div class="category">Bills & Utilities<br></div>
+                <div class="category">Health & Wellness<br></div>
+                <div class="category">Entertainment<br></div>
+            </div>
+        </div>
+        <div>
+            <h2>Today</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dental Scaling</td>
+                        <td>$230.00</td>
+                        <td>August 6, 2024</td>
+                        <td>Health & Wellness</td>
+                    </tr>
+                    <tr>
+                        <td>Movie Tickets</td>
+                        <td>$30.00</td>
+                        <td>August 9, 2024</td>
+                        <td>Entertainment</td>
+                    </tr>
+                    <tr>
+                        <td>Water Bills</td>
+                        <td>$150.00</td>
+                        <td>August 10, 2024</td>
+                        <td>Bills & Utilities</td>
+                    </tr>
+                    <tr>
+                        <td>Gym Subscription</td>
+                        <td>$50.00</td>
+                        <td>August 12, 2024</td>
+                        <td>Health & Wellness</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
 </html>
