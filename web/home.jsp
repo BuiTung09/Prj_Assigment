@@ -117,7 +117,7 @@
     </head>
     <body>
         <header>
-            <div>Welcome To Expense Management</div>
+            <div>Welcome TO Expense Management</div>
             <div class="auth">
                 <c:choose>
                     <c:when test="${not empty sessionScope.user}">
