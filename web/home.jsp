@@ -76,7 +76,7 @@
                 gap: 10px;
             }
 
-            .category {
+            .column {
                 flex: 1;
                 max-width: 150px;
                 padding: 10px;
@@ -85,7 +85,7 @@
                 border-radius: 5px;
                 background-color: white;
             }
-
+           
             .table {
                 width: 100%;
                 border-collapse: collapse;
@@ -144,7 +144,7 @@
                 <div class="categories">
                     <hr>
                     <h2>Categories :</h2>
-                    <div class="category-columns">
+                    
                         <div class="column">
                             <h3>Shopping</h3>
                             <p>$<fmt:formatNumber value="${category[0].totalAmount}" type="currency"/></p>
@@ -169,7 +169,6 @@
                             <h3>Entertainment</h3>
                             <p>$<fmt:formatNumber value="${category[5].totalAmount}" type="currency"/></p>
                         </div>
-                    </div>
                 </div>
             </div>
             <div>
